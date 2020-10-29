@@ -20,7 +20,7 @@ public class SpareParts_Login extends javax.swing.JFrame {
      */
     public SpareParts_Login() {
         initComponents();
-        setSize(899,440);
+        setSize(888,411);
         setResizable(false);
     }
 
@@ -101,7 +101,7 @@ public class SpareParts_Login extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(-8, -7, 900, 410);
 
-        setSize(new java.awt.Dimension(904, 450));
+        setSize(new java.awt.Dimension(904, 443));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
