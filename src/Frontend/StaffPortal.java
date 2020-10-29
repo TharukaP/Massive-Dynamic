@@ -62,7 +62,7 @@ public class StaffPortal extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("EMPLOYEE MANAGER");
         getContentPane().add(jButton2);
-        jButton2.setBounds(373, 468, 185, 45);
+        jButton2.setBounds(373, 468, 187, 45);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("ACCOUNTANT");
@@ -92,7 +92,7 @@ public class StaffPortal extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton7.setText("ADMINISTRATOR");
         getContentPane().add(jButton7);
-        jButton7.setBounds(552, 140, 165, 44);
+        jButton7.setBounds(30, 150, 165, 44);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/receptionist.png"))); // NOI18N
         getContentPane().add(jLabel10);
