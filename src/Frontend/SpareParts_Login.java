@@ -20,7 +20,7 @@ public class SpareParts_Login extends javax.swing.JFrame {
      */
     public SpareParts_Login() {
         initComponents();
-        setSize(888,411);
+        setSize(888,447);
         setResizable(false);
     }
 
@@ -99,9 +99,9 @@ public class SpareParts_Login extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/hp login background.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(-8, -7, 900, 410);
+        jLabel5.setBounds(-8, -7, 900, 440);
 
-        setSize(new java.awt.Dimension(904, 443));
+        setSize(new java.awt.Dimension(904, 468));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
