@@ -68,7 +68,7 @@ public class StaffPortal extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("EMPLOYEE MANAGER");
         getContentPane().add(jButton2);
-        jButton2.setBounds(373, 468, 185, 45);
+        jButton2.setBounds(373, 468, 187, 45);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("ACCOUNTANT");
@@ -107,6 +107,11 @@ public class StaffPortal extends javax.swing.JFrame {
 
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton7.setText("ADMINISTRATOR");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton7);
         jButton7.setBounds(524, 160, 165, 44);
 
@@ -170,6 +175,12 @@ public class StaffPortal extends javax.swing.JFrame {
         page1.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        dispose();
+        Administrator_Login_UI a1 = new Administrator_Login_UI();
+        a1.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
