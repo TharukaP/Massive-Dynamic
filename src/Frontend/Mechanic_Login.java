@@ -70,16 +70,16 @@ public class Mechanic_Login extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 130, 60));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Udaya\\OneDrive\\Desktop\\Pictures\\user.png")); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
         jLabel5.setText("Mechanic login");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Udaya\\OneDrive\\Desktop\\Pictures\\background3.png")); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 610));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 940, 560));
 
-        pack();
+        setBounds(0, 0, 942, 625);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -106,7 +106,7 @@ public class Mechanic_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       systemExit();
+        systemExit();
         StaffPortal page1=new StaffPortal();
         page1.setVisible(true);
         this.setVisible(false);
