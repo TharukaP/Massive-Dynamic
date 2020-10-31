@@ -68,7 +68,7 @@ public class StaffPortal extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("EMPLOYEE MANAGER");
         getContentPane().add(jButton2);
-        jButton2.setBounds(373, 468, 187, 45);
+        jButton2.setBounds(373, 468, 185, 45);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("ACCOUNTANT");
@@ -82,6 +82,11 @@ public class StaffPortal extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("MECHANIC");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4);
         jButton4.setBounds(926, 291, 207, 46);
 
@@ -181,6 +186,11 @@ public class StaffPortal extends javax.swing.JFrame {
         Administrator_Login_UI a1 = new Administrator_Login_UI();
         a1.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
