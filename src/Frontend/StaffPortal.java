@@ -188,7 +188,10 @@ public class StaffPortal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+         systemExit();
+        Mechanic_Login page1=new Mechanic_Login();
+        page1.setVisible(true);
+        this.setVisible(false);
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
