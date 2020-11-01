@@ -92,7 +92,7 @@ public class Mechanic_Login extends javax.swing.JFrame {
         getContentPane().add(jLabel7);
         jLabel7.setBounds(0, -40, 660, 570);
 
-        setBounds(0, 0, 663, 497);
+        setBounds(0, 0, 674, 543);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -104,7 +104,7 @@ public class Mechanic_Login extends javax.swing.JFrame {
             txtPassword.setText(null);
             systemExit();
             
-           MechUI page=new MechUI();
+            mechanic_UI page=new mechanic_UI();
             page.setVisible(true);
             this.setVisible(false);
             
