@@ -42,12 +42,12 @@ public class Administrator_UI extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(1739, 0, 468, 602);
+        jPanel1.setBounds(1739, 0, 0, 602);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel5.setText("Admin Login");
+        jLabel5.setText("Admin ");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(160, 20, 160, 29);
+        jLabel5.setBounds(200, 20, 120, 29);
 
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
