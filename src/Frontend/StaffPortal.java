@@ -67,8 +67,13 @@ public class StaffPortal extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("EMPLOYEE MANAGER");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
-        jButton2.setBounds(373, 468, 185, 45);
+        jButton2.setBounds(373, 468, 187, 45);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("ACCOUNTANT");
@@ -196,6 +201,12 @@ public class StaffPortal extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+        Employee_Manager_Login_UI emp2 = new Employee_Manager_Login_UI();
+        emp2.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
