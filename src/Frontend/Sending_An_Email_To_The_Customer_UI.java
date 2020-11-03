@@ -82,6 +82,11 @@ public class Sending_An_Email_To_The_Customer_UI extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Send Email");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Sending an Email");
@@ -250,6 +255,10 @@ public class Sending_An_Email_To_The_Customer_UI extends javax.swing.JFrame {
         Administrator_UI a2 = new Administrator_UI();
         a2.setVisible(true);
     }//GEN-LAST:event_buttonHome1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

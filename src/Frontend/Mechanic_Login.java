@@ -90,9 +90,9 @@ public class Mechanic_Login extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/mechanicloigbackgrou2.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, -40, 660, 570);
+        jLabel7.setBounds(0, -40, 650, 510);
 
-        setBounds(0, 0, 674, 543);
+        setBounds(0, 0, 663, 496);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -104,9 +104,7 @@ public class Mechanic_Login extends javax.swing.JFrame {
             txtPassword.setText(null);
             systemExit();
             
-            mechanic_UI page=new mechanic_UI();
-            page.setVisible(true);
-            this.setVisible(false);
+           
             
         }
         else{
