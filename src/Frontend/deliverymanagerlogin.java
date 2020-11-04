@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Hasantha Pathirana
+ * @author Tharuka Perera 
  */
 public class deliverymanagerlogin extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public deliverymanagerlogin() {
+    public deliverymanagerlogin(){ 
         initComponents();
         setSize(896,422);
         setResizable(false);
@@ -50,6 +50,8 @@ public class deliverymanagerlogin extends javax.swing.JFrame {
         jLabel1.setText("Delivery Department Login");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(490, 30, 340, 40);
+
+        txtUsername.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(txtUsername);
         txtUsername.setBounds(590, 120, 183, 35);
 
@@ -85,6 +87,7 @@ public class deliverymanagerlogin extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(670, 320, 106, 31);
 
+        txtPassword.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);

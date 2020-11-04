@@ -27,7 +27,7 @@ public class Newspareparts extends javax.swing.JFrame {
      */
     public Newspareparts() {
         initComponents();
-        update_stocks();
+       
     }
 
     /**
@@ -246,54 +246,8 @@ public class Newspareparts extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    
-    
-    PreparedStatement insert;
-     private void update_stocks(){
 
-        int c;
-        
-         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
-            String sql="SELECT * FROM parts";
-            insert=con.prepareStatement(sql);
-            ResultSet rs=insert.executeQuery();
-            ResultSetMetaData Rss = rs.getMetaData();
-            c=5;
-            
-            DefaultTableModel df=(DefaultTableModel)table_supply.getModel();
-            df.setRowCount(0);
-            
-            while(rs.next()){
-            Vector v2=new Vector();
-            
-                for(int a=1;a<=c;a++){
-                    v2.add(rs.getString("id"));                  
-                    v2.add(rs.getString("name"));
-                    v2.add(rs.getString("quantity"));
-                    v2.add(rs.getString("status"));
-                    v2.add(rs.getString("company"));
-                   
-                    
-                   
-                }
-                
-                df.addRow(v2);
-            }
-            
-            con.close();
-            
-            
-        }
-        catch(Exception e){
-        JOptionPane.showMessageDialog(this,"record not added");
-        
-            
-        }
-        
-
-    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         systemExit();
@@ -304,36 +258,13 @@ public class Newspareparts extends javax.swing.JFrame {
 
     private void table_supplyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_supplyMouseClicked
         // TODO add your handling code here:
-        DefaultTableModel df=(DefaultTableModel)table_supply.getModel();
-        int selectedIndex=table_supply.getSelectedRow();
-        txtId.setText(df.getValueAt(selectedIndex,0).toString());
+       
         
     }//GEN-LAST:event_table_supplyMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String id=txtId.getText();
-        String status=combo_order.getSelectedItem().toString();
-        String company=combo_company.getSelectedItem().toString();
-           
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
-            Statement stm=con.createStatement();
-            String sql="UPDATE parts SET status='"+status+"',company='"+company+"'"
-                    +"WHERE id='"+id+"'";
-            stm.execute(sql);          
-            JOptionPane.showMessageDialog(this,"record updated");
-            update_stocks();
-            con.close();
-            
-           
-        }
-        catch(Exception e){
-        JOptionPane.showMessageDialog(this,"record not added");
         
-            
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
