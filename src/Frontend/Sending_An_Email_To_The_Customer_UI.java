@@ -4,6 +4,13 @@
  * and open the template in the editor.
  */
 package Frontend;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.PasswordAuthentication;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.Transport;
 
 /**
  *
@@ -257,7 +264,32 @@ public class Sending_An_Email_To_The_Customer_UI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonHome1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String OwnersEmail = txtOwnersEmail.getText();
+        String VehicleNo = txtVehicleNo1.getText();
+        
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth","true");
+        properties.put("mail.smtp.starttls.enable","true");
+        properties.put("mail.smtp.host","smtp.gmail.com");
+        properties.put("mail.smtp.port","587");
+        
+        Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication(){
+                return new PasswordAuthentication("repairrust@gmail.com","Automart");
+                
+            }
+        });
+        
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("repairrust@gmail.com"));
+            message.addRecipient(Message.RecipientType.TO,new InternetAddress(OwnersEmail));
+            message.setSubject("Finished the reapir of the vehicle");
+            message.setText("We have finished repairing your vehicle "+VehicleNo+" Come and collect the bill from the receptionist and take your vehicle. ");
+            Transport.send(message);
+        } catch (Exception ex) {
+            System.out.println(""+ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
