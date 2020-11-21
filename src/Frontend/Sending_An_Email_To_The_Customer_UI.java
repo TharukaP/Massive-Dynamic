@@ -98,6 +98,12 @@ public class Sending_An_Email_To_The_Customer_UI extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Sending an Email");
 
+        txtVehicleNo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVehicleNo1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -291,6 +297,10 @@ public class Sending_An_Email_To_The_Customer_UI extends javax.swing.JFrame {
             System.out.println(""+ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtVehicleNo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVehicleNo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVehicleNo1ActionPerformed
 
     /**
      * @param args the command line arguments
