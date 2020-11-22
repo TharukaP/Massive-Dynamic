@@ -88,12 +88,12 @@ public class receptionistui2 extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "NIC", "Name", "email", "vehicle number", "price", "Date", "mobile number"
+                "Name", "NIC", "email", "mobile number", "vehicle number", "price", "Date"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton1.setBackground(new java.awt.Color(255, 102, 0));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +102,7 @@ public class receptionistui2 extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jButton2.setText("UPDATE");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class receptionistui2 extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(204, 0, 255));
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jButton4.setText("Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +120,7 @@ public class receptionistui2 extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 0, 102));
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jButton3.setText("DELETE");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -245,11 +245,7 @@ public class receptionistui2 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        txtname.setText(null);
-        txtnic.setText(null);
-        txtemail.setText(null);
-        txtmobile.setText(null);
-        txtvehiclenum.setText(null);
+   
         
       
 
@@ -257,7 +253,13 @@ public class receptionistui2 extends javax.swing.JFrame {
         if (r==JOptionPane.YES_OPTION)
         {
             System.out.println("Yes.. option selected..");
+            txtname.setText(null);
+            txtnic.setText(null);
+            txtemail.setText(null);
+            txtmobile.setText(null);
+            txtvehiclenum.setText(null);
             JOptionPane.showMessageDialog(rootPane, "Deleted succesfully");
+            
         }else if(r==JOptionPane.NO_OPTION)
         {
             System.out.println("No.. option selected..");
