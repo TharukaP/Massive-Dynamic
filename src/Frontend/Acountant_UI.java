@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Hasantha Pathirana
+ * @author Madhusha Siriwardane
  */
 public class Acountant_UI extends javax.swing.JFrame {
 
@@ -109,6 +109,11 @@ public class Acountant_UI extends javax.swing.JFrame {
         jLabel2.setText("Emp No.");
 
         txtEmp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmpActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Price");
@@ -605,6 +610,10 @@ public class Acountant_UI extends javax.swing.JFrame {
         int selectedIndex=table_Finance2.getSelectedRow();
         txtRego.setText(df.getValueAt(selectedIndex,1).toString());
     }//GEN-LAST:event_table_Finance2MouseClicked
+
+    private void txtEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmpActionPerformed
 
     /**
      * @param args the command line arguments
