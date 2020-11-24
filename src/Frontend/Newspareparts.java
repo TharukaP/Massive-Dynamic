@@ -91,7 +91,7 @@ public class Newspareparts extends javax.swing.JFrame {
         jLabel5.setText("E mail");
 
         combo_mail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        combo_mail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "tharuka0376@gmail.com" }));
+        combo_mail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "tharuka0376@gmail.com", "company2@gmail.com", "company3@gmail.com", "company4@gmail.com" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

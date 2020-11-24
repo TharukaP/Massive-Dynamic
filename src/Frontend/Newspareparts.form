@@ -276,8 +276,11 @@
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="1">
+                  <StringArray count="4">
                     <StringItem index="0" value="tharuka0376@gmail.com"/>
+                    <StringItem index="1" value="company2@gmail.com"/>
+                    <StringItem index="2" value="company3@gmail.com"/>
+                    <StringItem index="3" value="company4@gmail.com"/>
                   </StringArray>
                 </Property>
               </Properties>

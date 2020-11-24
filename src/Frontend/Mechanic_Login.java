@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Nimesha Perera
+ * @author Tharuka Perera
  */
 public class Mechanic_Login extends javax.swing.JFrame {
 
