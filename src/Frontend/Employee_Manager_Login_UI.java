@@ -117,7 +117,7 @@ public class Employee_Manager_Login_UI extends javax.swing.JFrame {
         if(Username.equals("empmanager")&& Password.equals("empmanager"))
         {
             dispose();
-            Employee_Manager_UI emp3 = new Employee_Manager_UI();
+            Employee_ManagerUI emp3 = new Employee_ManagerUI();
             emp3.setVisible(true);
         }
         else
