@@ -27,7 +27,8 @@ public class SparePartsDepartment_UI extends javax.swing.JFrame {
      */
     public SparePartsDepartment_UI() {
         initComponents();
-        
+        update_orders();
+        update_stocks();
     }
 
     /**
@@ -258,6 +259,11 @@ public class SparePartsDepartment_UI extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("DELETE");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Status");
@@ -336,6 +342,11 @@ public class SparePartsDepartment_UI extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        table_parts2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_parts2MouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(table_parts2);
@@ -421,8 +432,99 @@ public class SparePartsDepartment_UI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-   
-     
+    PreparedStatement insert;
+    private void update_orders(){
+
+        int c;
+        
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
+            String sql="SELECT id,name,quantity,price,status FROM mechanic";
+            insert=con.prepareStatement(sql);
+            ResultSet rs=insert.executeQuery();
+            ResultSetMetaData Rss = rs.getMetaData();
+            c=5;
+            
+            DefaultTableModel df=(DefaultTableModel)table_parts1.getModel();
+            df.setRowCount(0);
+            
+            while(rs.next()){
+            Vector v2=new Vector();
+            
+                for(int a=1;a<=c;a++){
+                    v2.add(rs.getString("id"));                  
+                    v2.add(rs.getString("name"));
+                    v2.add(rs.getString("quantity"));
+                    v2.add(rs.getString("price"));
+                    v2.add(rs.getString("status"));
+                    
+                   
+                }
+                
+                df.addRow(v2);
+            }
+            
+            con.close();
+            
+            
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(this,"record not added");
+        
+            
+        }
+        
+
+    }
+    
+    
+    
+    
+    private void update_stocks(){
+
+        int c;
+        
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
+            String sql="SELECT id,name,quantity,status FROM parts";
+            insert=con.prepareStatement(sql);
+            ResultSet rs=insert.executeQuery();
+            ResultSetMetaData Rss = rs.getMetaData();
+            c=4;
+            
+            DefaultTableModel df=(DefaultTableModel)table_parts2.getModel();
+            df.setRowCount(0);
+            
+            while(rs.next()){
+            Vector v2=new Vector();
+            
+                for(int a=1;a<=c;a++){
+                    v2.add(rs.getString("id"));                  
+                    v2.add(rs.getString("name"));
+                    v2.add(rs.getString("quantity"));
+                    v2.add(rs.getString("status"));
+                   
+                    
+                   
+                }
+                
+                df.addRow(v2);
+            }
+            
+            con.close();
+            
+            
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(this,"record not added");
+        
+            
+        }
+        
+
+    }
     
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
         // TODO add your handling code here:
@@ -439,13 +541,39 @@ public class SparePartsDepartment_UI extends javax.swing.JFrame {
     private void table_parts1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_parts1MouseClicked
         // TODO add your handling code here:
         
+        DefaultTableModel df=(DefaultTableModel)table_parts1.getModel();
+        int selectedIndex=table_parts1.getSelectedRow();
+        txtId.setText(df.getValueAt(selectedIndex,0).toString());
+        txtPrice.setText(df.getValueAt(selectedIndex,3).toString());
         
         
     }//GEN-LAST:event_table_parts1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         String id=txtId.getText();
+         String price=txtPrice.getText();
+        String status=combo_part1.getSelectedItem().toString();
         
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
+            Statement stm=con.createStatement();
+            String sql="UPDATE mechanic SET price='"+price+"',status='"+status+"'"
+                    +"WHERE id='"+id+"'";
+            stm.execute(sql);          
+            JOptionPane.showMessageDialog(this,"record updated");
+            update_orders();
+            con.close();
+            
+           
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(this,"record not added");
+        
+            
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -459,11 +587,86 @@ public class SparePartsDepartment_UI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String id=txtId1.getText();
+        String name =txtName.getText();
+        String quantity=txtQuantity.getText();
+        String status=combo_part2.getSelectedItem().toString();
         
         
         
-      
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
+            Statement stm=con.createStatement();
+            String sql="INSERT INTO parts VALUES('"+id+"','"+name+"','"+quantity+"','"+status+"','','')";
+            stm.execute(sql);
+            
+            
+            
+            JOptionPane.showMessageDialog(this,"record added");
+            update_stocks();
+            con.close();
+            
+            txtId.setText(null);
+            txtName.setText(null);
+            txtQuantity.setText(null);
+            
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(this,"record not added");
+        
+            txtId.setText(null);
+            txtName.setText(null);
+            txtQuantity.setText(null);
+            
+        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void table_parts2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_parts2MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel df=(DefaultTableModel)table_parts2.getModel();
+        int selectedIndex=table_parts2.getSelectedRow();
+        txtId1.setText(df.getValueAt(selectedIndex,0).toString());
+        txtName.setText(df.getValueAt(selectedIndex,1).toString());
+        txtQuantity.setText(df.getValueAt(selectedIndex,2).toString());
+    }//GEN-LAST:event_table_parts2MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        try{
+             String id=txtId1.getText();
+            
+             int dialogResult=JOptionPane.showConfirmDialog(null,"Are you Sure ?","Warning",JOptionPane.YES_NO_OPTION);
+             
+             if(dialogResult==JOptionPane.YES_OPTION){
+                 Class.forName("com.mysql.jdbc.Driver");
+                 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
+            Statement stm=con.createStatement();
+            String sql="DELETE FROM parts WHERE id='"+id+"'";
+                    
+            stm.execute(sql);
+            
+            JOptionPane.showMessageDialog(this,"Record Deleted Successfully!! ");
+            update_stocks();
+            con.close();  
+            
+            txtId1.setText(null);
+            txtName.setText(null);
+            txtQuantity.setText(null);
+
+             }
+                   
+
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(this,"record not Deleted");
+        
+            txtId1.setText(null);
+            txtName.setText(null);
+            txtQuantity.setText(null);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -490,8 +693,6 @@ public class SparePartsDepartment_UI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(SparePartsDepartment_UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
