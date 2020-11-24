@@ -60,6 +60,11 @@ public class Accountant_Login_UI extends javax.swing.JFrame {
         jLabel7.setBounds(420, 190, 64, 64);
 
         txtUsername.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtUsername);
         txtUsername.setBounds(530, 110, 179, 36);
 
@@ -94,7 +99,7 @@ public class Accountant_Login_UI extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/Accountant_Login_image.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 2940, 400);
+        jLabel1.setBounds(-350, 0, 3290, 420);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,7 +121,7 @@ public class Accountant_Login_UI extends javax.swing.JFrame {
         if(Username.equals("accountant")&& Password.equals("acnt"))
         {
             dispose();
-            Accountant_UI acc3=new Accountant_UI();
+            Acountant_UI acc3=new Acountant_UI();
             acc3.setVisible(true);
         }
         else
@@ -124,6 +129,10 @@ public class Accountant_Login_UI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Invalid Username or Password");
         }
     }//GEN-LAST:event_buttonLoginActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
     /**
      * @param args the command line arguments
