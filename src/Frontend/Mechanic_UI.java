@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Tharuka Perera
+ * @author Nimesha perera
  */
 public class Mechanic_UI extends javax.swing.JFrame {
 
