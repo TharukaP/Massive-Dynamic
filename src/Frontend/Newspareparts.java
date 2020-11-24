@@ -27,7 +27,7 @@ public class Newspareparts extends javax.swing.JFrame {
      */
     public Newspareparts() {
         initComponents();
-       
+        update_stocks();
     }
 
     /**
@@ -48,6 +48,8 @@ public class Newspareparts extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        combo_mail = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_supply = new javax.swing.JTable();
@@ -85,6 +87,12 @@ public class Newspareparts extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setText("E mail");
+
+        combo_mail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        combo_mail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "tharuka0376@gmail.com" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -101,13 +109,16 @@ public class Newspareparts extends javax.swing.JFrame {
                             .addComponent(combo_order, 0, 137, Short.MAX_VALUE)
                             .addComponent(txtId)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(combo_company, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 14, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(combo_mail, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(52, 52, 52))
         );
         jPanel2Layout.setVerticalGroup(
@@ -128,9 +139,13 @@ public class Newspareparts extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(combo_company, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(combo_mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, java.awt.Color.black));
@@ -140,11 +155,11 @@ public class Newspareparts extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Part ID", "Name", "Quantity", "Status", "Company Name"
+                "Part ID", "Name", "Quantity", "Status", "Company Name", "E mail"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -246,8 +261,55 @@ public class Newspareparts extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-
     
+    
+    PreparedStatement insert;
+     private void update_stocks(){
+
+        int c;
+        
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
+            String sql="SELECT * FROM parts";
+            insert=con.prepareStatement(sql);
+            ResultSet rs=insert.executeQuery();
+            ResultSetMetaData Rss = rs.getMetaData();
+            c=6;
+            
+            DefaultTableModel df=(DefaultTableModel)table_supply.getModel();
+            df.setRowCount(0);
+            
+            while(rs.next()){
+            Vector v2=new Vector();
+            
+                for(int a=1;a<=c;a++){
+                    v2.add(rs.getString("id"));                  
+                    v2.add(rs.getString("name"));
+                    v2.add(rs.getString("quantity"));
+                    v2.add(rs.getString("status"));
+                    v2.add(rs.getString("company"));
+                    v2.add(rs.getString("mail"));
+                   
+                    
+                   
+                }
+                
+                df.addRow(v2);
+            }
+            
+            con.close();
+            
+            
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(this,"record not added");
+        
+            
+        }
+        
+
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         systemExit();
@@ -258,13 +320,37 @@ public class Newspareparts extends javax.swing.JFrame {
 
     private void table_supplyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_supplyMouseClicked
         // TODO add your handling code here:
-       
+        DefaultTableModel df=(DefaultTableModel)table_supply.getModel();
+        int selectedIndex=table_supply.getSelectedRow();
+        txtId.setText(df.getValueAt(selectedIndex,0).toString());
         
     }//GEN-LAST:event_table_supplyMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String id=txtId.getText();
+        String status=combo_order.getSelectedItem().toString();
+        String company=combo_company.getSelectedItem().toString();
+        String mail=combo_mail.getSelectedItem().toString();
+           
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
+            Statement stm=con.createStatement();
+            String sql="UPDATE parts SET status='"+status+"',company='"+company+"',mail='"+mail+"'"
+                    +"WHERE id='"+id+"'";
+            stm.execute(sql);          
+            JOptionPane.showMessageDialog(this,"record updated");
+            update_stocks();
+            con.close();
+            
+           
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(this,"record not added");
         
+            
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -305,6 +391,7 @@ public class Newspareparts extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> combo_company;
+    private javax.swing.JComboBox<String> combo_mail;
     private javax.swing.JComboBox<String> combo_order;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -312,6 +399,7 @@ public class Newspareparts extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
