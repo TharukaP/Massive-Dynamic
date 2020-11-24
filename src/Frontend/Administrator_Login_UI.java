@@ -148,7 +148,7 @@ public class Administrator_Login_UI extends javax.swing.JFrame {
         if(Username.equals("admin")&& Password.equals("admin"))
         {
             dispose();
-            Administrator_UI a1=new Administrator_UI();
+            Admin_UI a1=new Admin_UI();
             a1.setVisible(true);  
         }
         else
