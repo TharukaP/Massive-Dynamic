@@ -7,7 +7,7 @@ package Frontend;
 import javax.swing.JOptionPane;
 /**
  *
- * @author rumes
+ * @author Madhusha Siriwardane
  */
 public class Accountant_Login_UI extends javax.swing.JFrame {
 
