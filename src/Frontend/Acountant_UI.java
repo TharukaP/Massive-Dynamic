@@ -268,6 +268,11 @@ public class Acountant_UI extends javax.swing.JFrame {
         jLabel5.setText("Total Expenses");
 
         txtExpenses.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtExpenses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtExpensesActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Total Income");
@@ -307,9 +312,9 @@ public class Acountant_UI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(txtExpenses, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(15, 15, 15)
                         .addComponent(jButton6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -623,6 +628,10 @@ public class Acountant_UI extends javax.swing.JFrame {
     private void txtIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIncomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIncomeActionPerformed
+
+    private void txtExpensesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtExpensesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtExpensesActionPerformed
 
     /**
      * @param args the command line arguments
