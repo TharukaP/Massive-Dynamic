@@ -240,7 +240,7 @@ public class Acountant_UI extends javax.swing.JFrame {
                         .addComponent(txtRego)
                         .addComponent(txtAmount, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -273,6 +273,11 @@ public class Acountant_UI extends javax.swing.JFrame {
         jLabel8.setText("Total Income");
 
         txtIncome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtIncome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIncomeActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setText("Log Out");
@@ -349,8 +354,8 @@ public class Acountant_UI extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(362, 362, 362)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,7 +373,7 @@ public class Acountant_UI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1114, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -614,6 +619,10 @@ public class Acountant_UI extends javax.swing.JFrame {
     private void txtEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmpActionPerformed
+
+    private void txtIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIncomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIncomeActionPerformed
 
     /**
      * @param args the command line arguments
