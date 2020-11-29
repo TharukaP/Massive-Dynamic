@@ -66,7 +66,6 @@ JpanelLoader jp =new JpanelLoader();
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sMenu_Panel.setBackground(new java.awt.Color(30, 30, 30));
         sMenu_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -260,8 +259,6 @@ JpanelLoader jp =new JpanelLoader();
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         sMenu_Panel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 680, -1, -1));
 
-        jPanel1.add(sMenu_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 260, 880));
-
         jPanel2.setBackground(new java.awt.Color(26, 26, 26));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -298,8 +295,6 @@ JpanelLoader jp =new JpanelLoader();
         });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 10, 40, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1480, 120));
-
         pnlMain.setBackground(new java.awt.Color(245, 246, 250));
         pnlMain.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -311,22 +306,39 @@ JpanelLoader jp =new JpanelLoader();
         );
         panel_LogLayout.setVerticalGroup(
             panel_LogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
-        pnlMain.add(panel_Log, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 880));
+        pnlMain.add(panel_Log, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 800));
 
-        jPanel1.add(pnlMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 1210, 880));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1480, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(sMenu_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(pnlMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sMenu_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1484, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 920, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
