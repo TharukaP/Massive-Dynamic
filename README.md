@@ -1,3 +1,0 @@
-# Massive-Dynamic
-Java Project 
-
