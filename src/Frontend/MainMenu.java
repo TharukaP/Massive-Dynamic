@@ -18,6 +18,7 @@ public class MainMenu extends javax.swing.JFrame {
 JpanelLoader jp =new JpanelLoader();
     /**
      * Creates new form MainMenu
+     * cLSnXwGQjzmdc7lOdggg9VjcmFwFmLrDKAyQQpdFOQIFOL8SkwE67mKxW4Emc3eL4uuK8Hz6nFbzEyF1eyzbtg==
      */
     public MainMenu() {
         initComponents();
@@ -432,7 +433,7 @@ JpanelLoader jp =new JpanelLoader();
 
     private void MechanicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MechanicActionPerformed
         // TODO add your handling code here:
-        //new CombinePanel(pnlMain, new Panels.Mechanic_UI());
+        //cLSnXwGQjzmdc7lOdggg9VjcmFwFmLrDKAyQQpdFOQIFOL8SkwE67mKxW4Emc3eL4uuK8Hz6nFbzEyF1eyzbtg==
         jp.jPanelLoader(pnlMain,new Panels.Login_UI());
         
      if(this.Mechanic.isSelected()){
