@@ -311,7 +311,7 @@ public class Admin_UI extends javax.swing.JPanel {
         add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 70));
     }// </editor-fold>//GEN-END:initComponents
 PreparedStatement insert;
-     private void view_customer(){
+     private void view_customer(){//viewing customer details in the UI
 
         int c;
         
@@ -352,7 +352,7 @@ PreparedStatement insert;
      
      
      
-     private void view_dealers(){
+     private void view_dealers(){//viewing supplier details in the UI
 
         int c;
         
@@ -396,14 +396,14 @@ PreparedStatement insert;
     }//GEN-LAST:event_txtSubject1ActionPerformed
 
     private void table_customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_customerMouseClicked
-        // TODO add your handling code here:
+        //viewing details in the text fields when we click the customer details table rows
         DefaultTableModel df=(DefaultTableModel)table_customer.getModel();
         int selectedIndex=table_customer.getSelectedRow();
         txtTo1.setText(df.getValueAt(selectedIndex,2).toString());
     }//GEN-LAST:event_table_customerMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here
+        //preparing to send the mail to the customer
         String[] to={txtTo1.getText()};
         String from="rustrepair1234";
         String pass="rust1234";
@@ -418,14 +418,14 @@ PreparedStatement insert;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void table_DealerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_DealerMouseClicked
-        // TODO add your handling code here:
+        //viewing details in the text fields when we click the supplier details table rows
         DefaultTableModel df=(DefaultTableModel)table_Dealer.getModel();
         int selectedIndex=table_Dealer.getSelectedRow();
         txtTo2.setText(df.getValueAt(selectedIndex,5).toString());
     }//GEN-LAST:event_table_DealerMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        //preparing to send the mail to the supplier
         String[] to={txtTo2.getText()};
         String from="rustrepair1234";
         String pass="rust1234";

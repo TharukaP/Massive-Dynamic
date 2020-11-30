@@ -12,9 +12,10 @@ import javax.mail.internet.MimeMessage;
 
 
 
-public class SendingMails {
+public class SendingMails { // a class for sending mails
 
     public void email(String[] to,String from,String pass,String subject,String body){
+        //creating a method and sending the mail inside the method
         Properties props = System.getProperties();
         String host = "smtp.gmail.com";
         props.put("mail.smtp.starttls.enable", "true");
