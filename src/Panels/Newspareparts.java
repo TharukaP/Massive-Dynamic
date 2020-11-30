@@ -27,7 +27,7 @@ public class Newspareparts extends javax.swing.JPanel {
      */
     public Newspareparts() {
         initComponents();
-        update_stocks();
+        update_stocks();//To view the supplier_table in the main menu
     }
 
     /**
@@ -232,14 +232,14 @@ public class Newspareparts extends javax.swing.JPanel {
         add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 130));
     }// </editor-fold>//GEN-END:initComponents
  PreparedStatement insert;
-     private void update_stocks(){
+     private void update_stocks(){ //To view the supplier table orders
 
         int c;
         
          try{
-            String sql="SELECT * FROM parts";
-            insert=con.mycon().prepareStatement(sql);
-            ResultSet rs=insert.executeQuery();
+            String sql="SELECT * FROM parts"; // SQL statment
+            insert=con.mycon().prepareStatement(sql); //To get the SQL connection from DataBase package
+            ResultSet rs=insert.executeQuery(); //Executing the query
             ResultSetMetaData Rss = rs.getMetaData();
             c=6;
             
@@ -247,7 +247,7 @@ public class Newspareparts extends javax.swing.JPanel {
             df.setRowCount(0);
             
             while(rs.next()){
-            Vector v2=new Vector();
+            Vector v2=new Vector(); //To view the sutaible table
             
                 for(int a=1;a<=c;a++){
                     v2.add(rs.getString("id"));                  
@@ -265,7 +265,7 @@ public class Newspareparts extends javax.swing.JPanel {
             } 
         }
         catch(Exception e){
-        JOptionPane.showMessageDialog(this,"record not added");
+        JOptionPane.showMessageDialog(this,"record not added"); //To send a prompt if record added incorectly 
         
             
         }
@@ -274,12 +274,12 @@ public class Newspareparts extends javax.swing.JPanel {
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String id=txtId.getText();
-        String status=combo_order.getSelectedItem().toString();
-        String company=combo_company.getSelectedItem().toString();
-        String mail=combo_mail.getSelectedItem().toString();
-         NewsparepartsDB_Update update1=new NewsparepartsDB_Update(id, status, company, mail);
-        update1.update();
+        String id=txtId.getText(); //To get details from text fields
+        String status=combo_order.getSelectedItem().toString(); //To get details from combo box
+        String company=combo_company.getSelectedItem().toString(); //To get details from combo box
+        String mail=combo_mail.getSelectedItem().toString(); //To get details from combo box
+         NewsparepartsDB_Update update1=new NewsparepartsDB_Update(id, status, company, mail); //created an object and sends the parameters.
+        update1.update(); //calls the method "NewsparepartsDB_Update" from DataBase package 
         update_stocks(); 
 
        

@@ -18,7 +18,7 @@ public class NewsparepartsDB_Update {
     String company;
     String mail;
     Newspareparts a=new Newspareparts();
-    public NewsparepartsDB_Update(String id, String status, String company, String mail)
+    public NewsparepartsDB_Update(String id, String status, String company, String mail) // To get update details from the Newspareparts as a constructor
     {
         this.id=id;
         this.status=status;
@@ -26,7 +26,7 @@ public class NewsparepartsDB_Update {
         this.mail=mail;
         
     }
-    public void update()
+    public void update() //update details method
     {
         try{
             Class.forName("com.mysql.jdbc.Driver");
