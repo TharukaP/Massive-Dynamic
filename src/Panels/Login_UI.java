@@ -161,7 +161,7 @@ public class Login_UI extends javax.swing.JPanel {
             jp.jPanelLoader(jPanel1,new Panels.Employee_ManagerUI());
         }else if(username.contains("accountant")&&(Password.contains("accountant"))){
             jp.jPanelLoader(jPanel1,new Panels.Accountant());
-        }else if(username.contains("deliverymanager")&&(Password.contains("deliverymanager"))){
+        }else if(username.contains("delivery")&&(Password.contains("delivery"))){
             jp.jPanelLoader(jPanel1,new Panels.Newspareparts());
         }else if(username.contains("spareparts")&&(Password.contains("spareparts"))){
             jp.jPanelLoader(jPanel1,new Panels.SparePartsDepartment_UI());

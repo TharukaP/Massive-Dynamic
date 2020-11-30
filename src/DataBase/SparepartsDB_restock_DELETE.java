@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import Panels.SparePartsDepartment_UI;
 /**
  *
- * @author Hasantha Pathirana
+ * 
  */
 public class SparepartsDB_restock_DELETE {
   String id;

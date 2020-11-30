@@ -7,7 +7,7 @@ package Model;
 
 /**
  *
- * @author RojeruSan
+ * 
  */
 import javax.swing.JPanel;
 

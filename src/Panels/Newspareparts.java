@@ -17,6 +17,7 @@ import java.sql.Statement;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import DataBase.NewsparepartsDB_Update;
 
 public class Newspareparts extends javax.swing.JPanel {
     Sql_Connection con=new Sql_Connection();
@@ -96,7 +97,7 @@ public class Newspareparts extends javax.swing.JPanel {
         jLabel5.setText("E mail");
 
         combo_mail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        combo_mail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "hasanthapathirana2@gmail.com" }));
+        combo_mail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "tharuka0376@gmail.com", "company1@gmail.com", "company2@gmail.com", "company3@gmail.com" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -186,7 +187,7 @@ public class Newspareparts extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -218,7 +219,7 @@ public class Newspareparts extends javax.swing.JPanel {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1150, 470));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1060, 470));
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -277,20 +278,11 @@ public class Newspareparts extends javax.swing.JPanel {
         String status=combo_order.getSelectedItem().toString();
         String company=combo_company.getSelectedItem().toString();
         String mail=combo_mail.getSelectedItem().toString();
+         NewsparepartsDB_Update update1=new NewsparepartsDB_Update(id, status, company, mail);
+        update1.update();
+        update_stocks(); 
 
-        try{
-            Statement stm=con.mycon().createStatement();
-            String sql="UPDATE parts SET status='"+status+"',company='"+company+"',mail='"+mail+"'"
-            +"WHERE id='"+id+"'";
-            stm.execute(sql);
-            JOptionPane.showMessageDialog(this,"record updated");
-            update_stocks();
-
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this,"record not added");
-
-        }
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void table_supplyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_supplyMouseClicked

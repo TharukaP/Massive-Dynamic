@@ -11,6 +11,8 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.Vector;
 import javax.swing.JOptionPane;
+import DataBase.Mechanic_UIDB_Updaterequestingemployees;
+import DataBase.Mechanic_UIDB_Updatevechiclestatus;
 
 public class Mechanic_UI extends javax.swing.JPanel {
     Sql_Connection con=new Sql_Connection();
@@ -417,7 +419,7 @@ public class Mechanic_UI extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 295, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -580,20 +582,11 @@ PreparedStatement insert;
         // TODO add your handling code here:
         String rego=txtrego.getText();
         String status=combo_status.getSelectedItem().toString();
+         Mechanic_UIDB_Updatevechiclestatus update1=new Mechanic_UIDB_Updatevechiclestatus(rego, status);
+        update1.update();
+        update_status();
 
-        try{
-            Statement stm=con.mycon().createStatement();
-            String sql="UPDATE register SET status='"+status+"'"
-            +"WHERE rego='"+rego+"'";
-            stm.execute(sql);
-            JOptionPane.showMessageDialog(this,"record updated");
-            update_status();
-
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this,"record not added");
-
-        }
+       
 
     }//GEN-LAST:event_update_statusActionPerformed
 
@@ -617,19 +610,11 @@ PreparedStatement insert;
         // TODO add your handling code here:
         String rego=txtrego1.getText();
         String request=combo_request.getSelectedItem().toString();
+         Mechanic_UIDB_Updaterequestingemployees update1=new Mechanic_UIDB_Updaterequestingemployees(rego, request);
+        update1.update();
+        update_employees();
 
-        try{
-            Statement stm=con.mycon().createStatement();
-            String sql="UPDATE register SET request='"+request+"'"
-            +"WHERE rego='"+rego+"'";
-            stm.execute(sql);
-            JOptionPane.showMessageDialog(this,"record updated");
-            update_employees();
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this,"record not added");
-
-        }
+       
     }//GEN-LAST:event_update_employeeActionPerformed
 
     private void table_SparePartsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_SparePartsMouseClicked

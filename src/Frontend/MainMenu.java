@@ -12,7 +12,7 @@ import Model.JpanelLoader;
 
 /**
  *
- * @author Hasantha Pathirana
+ * 
  */
 public class MainMenu extends javax.swing.JFrame {
 JpanelLoader jp =new JpanelLoader();
@@ -44,17 +44,17 @@ JpanelLoader jp =new JpanelLoader();
         sMenu_Panel = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         home = new Utilities.RSButtonMetro();
-        empManager = new Utilities.RSButtonMetro();
         Mechanic = new Utilities.RSButtonMetro();
         recep = new Utilities.RSButtonMetro();
-        accountant = new Utilities.RSButtonMetro();
-        dManager = new Utilities.RSButtonMetro();
         spManager = new Utilities.RSButtonMetro();
         admin = new Utilities.RSButtonMetro();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
+        empManager = new Utilities.RSButtonMetro();
+        dManager = new Utilities.RSButtonMetro();
+        accountant = new Utilities.RSButtonMetro();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -109,26 +109,6 @@ JpanelLoader jp =new JpanelLoader();
 
         sMenu_Panel.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, 60));
 
-        empManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_EmployeeManager_40px.png"))); // NOI18N
-        empManager.setText("Employee Manager");
-        empManager.setColorHover(new java.awt.Color(60, 60, 59));
-        empManager.setColorNormal(new java.awt.Color(30, 30, 30));
-        empManager.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        empManager.setHideActionText(true);
-        empManager.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        empManager.setIconTextGap(25);
-        empManager.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                empManagerMousePressed(evt);
-            }
-        });
-        empManager.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                empManagerActionPerformed(evt);
-            }
-        });
-        sMenu_Panel.add(empManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 260, 60));
-
         Mechanic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_mechanic_40px.png"))); // NOI18N
         Mechanic.setText("Mechanic");
         Mechanic.setColorHover(new java.awt.Color(60, 60, 59));
@@ -147,7 +127,7 @@ JpanelLoader jp =new JpanelLoader();
                 MechanicActionPerformed(evt);
             }
         });
-        sMenu_Panel.add(Mechanic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 260, 60));
+        sMenu_Panel.add(Mechanic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 260, 60));
 
         recep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_customer_support_40px.png"))); // NOI18N
         recep.setText("Receptionist");
@@ -169,46 +149,6 @@ JpanelLoader jp =new JpanelLoader();
         });
         sMenu_Panel.add(recep, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 260, 60));
 
-        accountant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_accountant_40px.png"))); // NOI18N
-        accountant.setText("Accountant");
-        accountant.setColorHover(new java.awt.Color(60, 60, 59));
-        accountant.setColorNormal(new java.awt.Color(30, 30, 30));
-        accountant.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        accountant.setHideActionText(true);
-        accountant.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        accountant.setIconTextGap(25);
-        accountant.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                accountantMousePressed(evt);
-            }
-        });
-        accountant.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accountantActionPerformed(evt);
-            }
-        });
-        sMenu_Panel.add(accountant, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 260, 60));
-
-        dManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_Dilivery_40px.png"))); // NOI18N
-        dManager.setText("Delivery Manager");
-        dManager.setColorHover(new java.awt.Color(60, 60, 59));
-        dManager.setColorNormal(new java.awt.Color(30, 30, 30));
-        dManager.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
-        dManager.setHideActionText(true);
-        dManager.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dManager.setIconTextGap(25);
-        dManager.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                dManagerMousePressed(evt);
-            }
-        });
-        dManager.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dManagerActionPerformed(evt);
-            }
-        });
-        sMenu_Panel.add(dManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 260, 60));
-
         spManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_spareParts_40px.png"))); // NOI18N
         spManager.setText("Spare Parts Manager");
         spManager.setColorHover(new java.awt.Color(60, 60, 59));
@@ -227,7 +167,7 @@ JpanelLoader jp =new JpanelLoader();
                 spManagerActionPerformed(evt);
             }
         });
-        sMenu_Panel.add(spManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 260, 60));
+        sMenu_Panel.add(spManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 260, 60));
 
         admin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_Admin_40px.png"))); // NOI18N
         admin.setText("Administrator");
@@ -247,7 +187,7 @@ JpanelLoader jp =new JpanelLoader();
                 adminActionPerformed(evt);
             }
         });
-        sMenu_Panel.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 260, 60));
+        sMenu_Panel.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 260, 60));
         sMenu_Panel.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 250, -1));
 
         jLabel1.setBackground(new java.awt.Color(30, 30, 30));
@@ -259,6 +199,66 @@ JpanelLoader jp =new JpanelLoader();
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         sMenu_Panel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 680, -1, -1));
+
+        empManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_EmployeeManager_40px.png"))); // NOI18N
+        empManager.setText("Employee Manager");
+        empManager.setColorHover(new java.awt.Color(60, 60, 59));
+        empManager.setColorNormal(new java.awt.Color(30, 30, 30));
+        empManager.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        empManager.setHideActionText(true);
+        empManager.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        empManager.setIconTextGap(25);
+        empManager.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                empManagerMousePressed(evt);
+            }
+        });
+        empManager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empManagerActionPerformed(evt);
+            }
+        });
+        sMenu_Panel.add(empManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 260, 60));
+
+        dManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_Dilivery_40px.png"))); // NOI18N
+        dManager.setText("Delivery Manager");
+        dManager.setColorHover(new java.awt.Color(60, 60, 59));
+        dManager.setColorNormal(new java.awt.Color(30, 30, 30));
+        dManager.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        dManager.setHideActionText(true);
+        dManager.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dManager.setIconTextGap(25);
+        dManager.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                dManagerMousePressed(evt);
+            }
+        });
+        dManager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dManagerActionPerformed(evt);
+            }
+        });
+        sMenu_Panel.add(dManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 260, 60));
+
+        accountant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_accountant_40px.png"))); // NOI18N
+        accountant.setText("Accountant");
+        accountant.setColorHover(new java.awt.Color(60, 60, 59));
+        accountant.setColorNormal(new java.awt.Color(30, 30, 30));
+        accountant.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
+        accountant.setHideActionText(true);
+        accountant.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        accountant.setIconTextGap(25);
+        accountant.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                accountantMousePressed(evt);
+            }
+        });
+        accountant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accountantActionPerformed(evt);
+            }
+        });
+        sMenu_Panel.add(accountant, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 260, 60));
 
         jPanel2.setBackground(new java.awt.Color(26, 26, 26));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

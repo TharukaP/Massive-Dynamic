@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import DataBase.Sql_Connection;
 /**
  *
- * @author Hasantha Pathirana
+ * 
  */
 public class SparepartsDB_UPDATE {
     String id;
