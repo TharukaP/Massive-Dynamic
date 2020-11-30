@@ -284,7 +284,7 @@ JpanelLoader jp =new JpanelLoader();
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 10, 30, 30));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, 30, 30));
 
         jButton2.setBackground(new java.awt.Color(26, 26, 26));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frontend/resources/icon_Coulour_cancel_30px.png"))); // NOI18N
@@ -294,7 +294,7 @@ JpanelLoader jp =new JpanelLoader();
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 10, 40, 30));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 10, 40, 30));
 
         pnlMain.setBackground(new java.awt.Color(245, 246, 250));
         pnlMain.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

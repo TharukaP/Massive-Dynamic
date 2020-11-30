@@ -404,11 +404,11 @@ PreparedStatement insert;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here
-        String[] to={txtTo2.getText()};
+        String[] to={txtTo1.getText()};
         String from="rustrepair1234";
         String pass="rust1234";
-        String subject=txtSubject2.getText();
-        String body=txtMessage2.getText();
+        String subject=txtSubject1.getText();
+        String body=txtMessage1.getText();
         
         SendingMails mail = new SendingMails();
         mail.email(to, from, pass, subject, body);
