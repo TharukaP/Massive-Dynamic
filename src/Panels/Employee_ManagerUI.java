@@ -305,7 +305,7 @@ PreparedStatement insert;
     
     
     
-     private void view_wages(){
+     private void view_wages(){//The wages details will be appear on the employee wages table
 
         int c;
         
@@ -343,7 +343,7 @@ PreparedStatement insert;
 
     }
     
-    private void update_employeeManagerUI(){
+    private void update_employeeManagerUI(){//Assigning employees
 
         int c;
         
@@ -379,7 +379,7 @@ PreparedStatement insert;
 
     }
     private void table_EmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_EmployeeMouseClicked
-        // TODO add your handling code here:
+        //Viewing details in the text fields when we clicked the employee wages details
         DefaultTableModel df=(DefaultTableModel)table_Employee.getModel();
         int selectedIndex=table_Employee.getSelectedRow();
         txtRego.setText(df.getValueAt(selectedIndex,0).toString());
@@ -387,7 +387,7 @@ PreparedStatement insert;
     }//GEN-LAST:event_table_EmployeeMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //Updating employee details
 
         String rego=txtRego.getText();
         String request=combo_status1.getSelectedItem().toString();
@@ -408,7 +408,7 @@ PreparedStatement insert;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void table_wageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_wageMouseClicked
-        // TODO add your handling code here:
+        // Viewing details in the text fields when we clicked the assign employees details
         DefaultTableModel df=(DefaultTableModel)table_wage.getModel();
         int selectedIndex=table_wage.getSelectedRow();
         txtJob.setText(df.getValueAt(selectedIndex,0).toString());
@@ -417,7 +417,7 @@ PreparedStatement insert;
     }//GEN-LAST:event_table_wageMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        //Adding details to the employee wages table
 
         String job=txtJob.getText();
         String status2=combo_status2.getSelectedItem().toString();
@@ -445,7 +445,7 @@ PreparedStatement insert;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        // Deleting employee wages details
         try{
             String job=txtJob.getText();
 
