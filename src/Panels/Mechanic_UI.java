@@ -457,7 +457,9 @@ public class Mechanic_UI extends javax.swing.JPanel {
         add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 80));
     }// </editor-fold>//GEN-END:initComponents
 PreparedStatement insert;
-    private void update_status(){
+    
+//Display the vehicle status details in Table
+private void update_status(){
 
         int c;
         
@@ -493,6 +495,7 @@ PreparedStatement insert;
 
     }
     
+//Display the requesting employees details in Table
      private void update_employees(){
 
         int c;
@@ -531,7 +534,7 @@ PreparedStatement insert;
     }
     
     
-    
+    //Display the spare parts details in Table
      private void update_SpareParts(){
 
         int c;
@@ -572,6 +575,8 @@ PreparedStatement insert;
     }
     private void table_statusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_statusMouseClicked
         // TODO add your handling code here:
+        
+        //Get data to the TextField by pressing the row in Table
         DefaultTableModel df=(DefaultTableModel)table_status.getModel();
         int selectedIndex=table_status.getSelectedRow();
         txtrego.setText(df.getValueAt(selectedIndex,0).toString());
@@ -580,10 +585,12 @@ PreparedStatement insert;
 
     private void update_statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_statusActionPerformed
         // TODO add your handling code here:
+        
+        //Get data to update database
         String rego=txtrego.getText();
         String status=combo_status.getSelectedItem().toString();
          Mechanic_UIDB_Updatevechiclestatus update1=new Mechanic_UIDB_Updatevechiclestatus(rego, status);
-        update1.update();
+        update1.update();//call the method from database package
         update_status();
 
        
@@ -596,6 +603,8 @@ PreparedStatement insert;
 
     private void table_employeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_employeeMouseClicked
         // TODO add your handling code here:
+        
+        //Get data to the TextField by pressing the row in Table
         DefaultTableModel df=(DefaultTableModel)table_employee.getModel();
         int selectedIndex=table_employee.getSelectedRow();
         txtrego1.setText(df.getValueAt(selectedIndex,0).toString());
@@ -608,10 +617,12 @@ PreparedStatement insert;
 
     private void update_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_employeeActionPerformed
         // TODO add your handling code here:
+        
+        //Get data to update database
         String rego=txtrego1.getText();
         String request=combo_request.getSelectedItem().toString();
          Mechanic_UIDB_Updaterequestingemployees update1=new Mechanic_UIDB_Updaterequestingemployees(rego, request);
-        update1.update();
+        update1.update();//call the method from database package
         update_employees();
 
        
@@ -620,6 +631,7 @@ PreparedStatement insert;
     private void table_SparePartsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_SparePartsMouseClicked
         // TODO add your handling code here:
 
+        //Get data to the TextField by pressing the row in Table
         DefaultTableModel df=(DefaultTableModel)table_SpareParts.getModel();
         int selectedIndex=table_SpareParts.getSelectedRow();
         txtId.setText(df.getValueAt(selectedIndex,0).toString());
@@ -635,6 +647,7 @@ PreparedStatement insert;
         String quantity=txtQuantity.getText();
         String status=combo_spare.getSelectedItem().toString();
 
+        //Insert spare parts details into database
         try{
             Statement stm=con.mycon().createStatement();
             String sql="INSERT INTO mechanic VALUES('"+id+"','"+name+"','"+quantity+"','','"+status+"')";
@@ -662,6 +675,7 @@ PreparedStatement insert;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
+        //Delete spare parts details from database
         try{
             String spareId=txtId.getText();
 

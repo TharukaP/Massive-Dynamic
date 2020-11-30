@@ -28,6 +28,7 @@ public class Mechanic_UIDB_Updaterequestingemployees {
         
          public void update()
     {
+        //Update the request employees in database 
          try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");

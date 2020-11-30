@@ -25,6 +25,7 @@ public class Mechanic_UIDB_Updatevechiclestatus {
     }
     public void update()
     {
+        //Update the vehicle status in database
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
