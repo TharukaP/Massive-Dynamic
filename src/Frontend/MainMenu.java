@@ -5,7 +5,7 @@
  */
 package Frontend;
 
-import Model.CombinePanel;
+
 import java.awt.Color;
 import Model.JpanelLoader;
 
