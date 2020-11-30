@@ -99,17 +99,32 @@ public class Accountant extends javax.swing.JPanel {
         jLabel2.setText("Emp No.");
 
         txtEmp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmpActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Price");
 
         txtPrice.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPriceActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Status");
 
         combo_status1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_status1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOT PAID", "PAID" }));
+        combo_status1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_status1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Update");
@@ -198,6 +213,11 @@ public class Accountant extends javax.swing.JPanel {
         jLabel7.setText("Amount");
 
         txtRego.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtRego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRegoActionPerformed(evt);
+            }
+        });
 
         txtAmount.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
@@ -319,6 +339,7 @@ public class Accountant extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 27, 506, -1));
     }// </editor-fold>//GEN-END:initComponents
     PreparedStatement insert;
+    //viewing the payment in the customer payment table
     private void view_payment(){
 
         int c;
@@ -361,7 +382,7 @@ public class Accountant extends javax.swing.JPanel {
         
 
     }
-    
+    //calculate Wage
      private void view_wages(){
 
         int c;
@@ -407,7 +428,7 @@ public class Accountant extends javax.swing.JPanel {
      
      
      
-     
+     //calculate Total Income
      private void update_income(){
           try{
             String sql="SELECT SUM(amount) FROM register";
@@ -430,13 +451,13 @@ public class Accountant extends javax.swing.JPanel {
         }
      }
     private void table_Finance1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_Finance1MouseClicked
-        // TODO add your handling code here:
+        // viewing the details on the fields when we click the table details
         DefaultTableModel df=(DefaultTableModel)table_Finance1.getModel();
         int selectedIndex=table_Finance1.getSelectedRow();
         txtEmp.setText(df.getValueAt(selectedIndex,1).toString());
         txtPrice.setText(df.getValueAt(selectedIndex,2).toString());
     }//GEN-LAST:event_table_Finance1MouseClicked
-
+    //update employee wages
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
@@ -463,12 +484,12 @@ public class Accountant extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void table_Finance2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_Finance2MouseClicked
-        // TODO add your handling code here:
+        // viewing the details on the fields when we click the table details
         DefaultTableModel df=(DefaultTableModel)table_Finance2.getModel();
         int selectedIndex=table_Finance2.getSelectedRow();
         txtRego.setText(df.getValueAt(selectedIndex,1).toString());
     }//GEN-LAST:event_table_Finance2MouseClicked
-
+    //update customer payment
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
 
@@ -489,7 +510,7 @@ public class Accountant extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
-
+   //update expenses
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         try{
@@ -512,6 +533,22 @@ public class Accountant extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void txtEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmpActionPerformed
+
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPriceActionPerformed
+
+    private void txtRegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRegoActionPerformed
+
+    private void combo_status1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_status1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_status1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
