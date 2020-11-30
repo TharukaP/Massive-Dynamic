@@ -20,9 +20,9 @@ public class Sql_Connection {
      Connection con = null ;
      
      try {
-         
+         //sql connection for the database location
          Class.forName("com.mysql.jdbc.Driver");
-         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
+         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");//address location for the database
          return con;
          
          

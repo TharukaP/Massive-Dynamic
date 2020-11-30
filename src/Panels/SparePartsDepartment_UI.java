@@ -27,8 +27,8 @@ public class SparePartsDepartment_UI extends javax.swing.JPanel {
      */
     public SparePartsDepartment_UI() {
         initComponents();
-        update_orders();
-        update_stocks();
+        update_orders();  //veiw updated mechanic_table when loading the panel in main menu
+        update_stocks();  //view updated rupplier_table when loading the panel in the main menu
     }
 
     /**
@@ -433,14 +433,14 @@ public class SparePartsDepartment_UI extends javax.swing.JPanel {
         add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 90));
     }// </editor-fold>//GEN-END:initComponents
 PreparedStatement insert;
-    private void update_orders(){
+    private void update_orders(){  //view the table of Mechanic Update orders
 
         int c;
         
          try{
-            String sql="SELECT id,name,quantity,price,status FROM mechanic";
-            insert=con.mycon().prepareStatement(sql);
-            ResultSet rs=insert.executeQuery();
+            String sql="SELECT id,name,quantity,price,status FROM mechanic"; //sql statement
+            insert=con.mycon().prepareStatement(sql);  //get sql connection from the database package
+            ResultSet rs=insert.executeQuery();  //execute the query
             ResultSetMetaData Rss = rs.getMetaData();
             c=5;
             
@@ -449,7 +449,7 @@ PreparedStatement insert;
             
             while(rs.next()){
             Vector v2=new Vector();
-            
+                                        //view the table data according to the order.
                 for(int a=1;a<=c;a++){
                     v2.add(rs.getString("id"));                  
                     v2.add(rs.getString("name"));
@@ -462,18 +462,18 @@ PreparedStatement insert;
             
         }
         catch(Exception e){
-        JOptionPane.showMessageDialog(this,"record not added");          
+        JOptionPane.showMessageDialog(this,"record not added");  //notice if records not added properly        
         }
     }
 
     
     private void update_stocks(){
-
+            //view the supplier handler tale 
         int c;
         
          try{
-            String sql="SELECT id,name,quantity,status FROM parts";
-            insert=con.mycon().prepareStatement(sql);
+            String sql="SELECT id,name,quantity,status FROM parts"; //sql statement
+            insert=con.mycon().prepareStatement(sql);  //get sql connection from the database package
             ResultSet rs=insert.executeQuery();
             ResultSetMetaData Rss = rs.getMetaData();
             c=4;            
@@ -482,7 +482,7 @@ PreparedStatement insert;
             
             while(rs.next()){
             Vector v2=new Vector();
-            
+            //view the data base details accordingly
                 for(int a=1;a<=c;a++){
                     v2.add(rs.getString("id"));                  
                     v2.add(rs.getString("name"));
@@ -494,7 +494,7 @@ PreparedStatement insert;
               
         }
         catch(Exception e){
-        JOptionPane.showMessageDialog(this,"record not added");
+        JOptionPane.showMessageDialog(this,"record not added"); //message if the data is not added properly
         
             
         }
@@ -506,11 +506,11 @@ PreparedStatement insert;
 
     private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
         // TODO add your handling code here:
-        String id=txtId.getText();
+        String id=txtId.getText(); //det details from text fields
         String price=txtPrice.getText();
-        String status=combo_part1.getSelectedItem().toString();
-        SparepartsDB_UPDATE update1=new SparepartsDB_UPDATE(id, price, status);
-        update1.update();
+        String status=combo_part1.getSelectedItem().toString(); //get details from the combo box
+        SparepartsDB_UPDATE update1=new SparepartsDB_UPDATE(id, price, status);  //create a object and send the parameters.
+        update1.update(); //call the methods from database package
         update_orders();
 
     }//GEN-LAST:event_jButtonUpdateActionPerformed
@@ -520,8 +520,8 @@ PreparedStatement insert;
     }//GEN-LAST:event_combo_part1ActionPerformed
 
     private void table_parts1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_parts1MouseClicked
-        // TODO add your handling code here:
-
+       
+        //get details by pressing the data from the table
         DefaultTableModel df=(DefaultTableModel)table_parts1.getModel();
         int selectedIndex=table_parts1.getSelectedRow();
         txtId.setText(df.getValueAt(selectedIndex,0).toString());
@@ -534,24 +534,24 @@ PreparedStatement insert;
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
-        // TODO add your handling code here:
-        String id=txtId1.getText();
+        
+        String id=txtId1.getText();    //get details 
         String name =txtName.getText();
         String quantity=txtQuantity.getText();
         String status=combo_part2.getSelectedItem().toString();
-        SparepartsDB_restock_ADD add=new SparepartsDB_restock_ADD(id, name, quantity, status);
+        SparepartsDB_restock_ADD add=new SparepartsDB_restock_ADD(id, name, quantity, status);//create a object and send the parameters.
 
         try{
             add.add();
-            update_stocks();
-            txtId.setText(null);
+            update_stocks();//call the methods from database package
+            txtId.setText(null);  //make the text fields empty
             txtName.setText(null);
             txtQuantity.setText(null);
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this,"record not added");
+            JOptionPane.showMessageDialog(this,"record not added"); //notify if the records not added
             txtId.setText(null);
-            txtName.setText(null);
+            txtName.setText(null); //make the fields empty
             txtQuantity.setText(null);
         }
 
@@ -561,7 +561,7 @@ PreparedStatement insert;
         // TODO add your handling code here:
         String id=txtId1.getText();
         try{
-            SparepartsDB_restock_DELETE delete1=new SparepartsDB_restock_DELETE(id);
+            SparepartsDB_restock_DELETE delete1=new SparepartsDB_restock_DELETE(id); //create a object and send the parameters.
             delete1.delete();
             update_stocks();
             txtId1.setText(null);
@@ -578,6 +578,8 @@ PreparedStatement insert;
 
     private void table_parts2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_parts2MouseClicked
         // TODO add your handling code here:
+        
+        //get details by pressing the data from the table
         DefaultTableModel df=(DefaultTableModel)table_parts2.getModel();
         int selectedIndex=table_parts2.getSelectedRow();
         txtId1.setText(df.getValueAt(selectedIndex,0).toString());

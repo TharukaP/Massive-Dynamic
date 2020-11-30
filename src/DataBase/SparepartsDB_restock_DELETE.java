@@ -14,6 +14,7 @@ import Panels.SparePartsDepartment_UI;
 public class SparepartsDB_restock_DELETE {
   String id;
   SparePartsDepartment_UI obj1=new SparePartsDepartment_UI();
+  
     public SparepartsDB_restock_DELETE(String id) {
         this.id = id;
     }

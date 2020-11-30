@@ -8,7 +8,7 @@ package DataBase;
 import Panels.SparePartsDepartment_UI;
 import java.sql.*;
 import javax.swing.JOptionPane;
-import DataBase.Sql_Connection;
+
 /**
  *
  * 
@@ -19,12 +19,12 @@ public class SparepartsDB_UPDATE {
     String status;
     SparePartsDepartment_UI ob1=new SparePartsDepartment_UI();
     Sql_Connection con=new Sql_Connection();
-    public SparepartsDB_UPDATE(String id, String price, String status) {
+    public SparepartsDB_UPDATE(String id, String price, String status) { //get update details from the Spareparts DepartmentUI as a constructor
         this.id = id;
         this.price = price;
         this.status = status;
     }
-    public void update(){
+    public void update(){ //update details method
     try{
         
         Statement stm=con.mycon().createStatement();

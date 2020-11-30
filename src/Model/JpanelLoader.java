@@ -11,8 +11,10 @@ import javax.swing.JPanel;
  * 
  */
 public class JpanelLoader {
+    
+    //Loading the jpanels accordingly
    
-   public static  void jPanelLoader(JPanel Main,JPanel setPanel){
+   public static  void jPanelLoader(JPanel Main,JPanel setPanel){ 
       Main.removeAll();
      
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(Main);

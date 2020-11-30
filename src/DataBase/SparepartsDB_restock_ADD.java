@@ -14,12 +14,12 @@ import Panels.SparePartsDepartment_UI;
 public class SparepartsDB_restock_ADD {
     
 
-        String id;
+        String id;      //attributes
         String name;
         String quantity;
         String status;
         SparePartsDepartment_UI obj1=new SparePartsDepartment_UI();
-    public SparepartsDB_restock_ADD(String id, String name, String quantity, String status) {
+    public SparepartsDB_restock_ADD(String id, String name, String quantity, String status) {//get update details from the Spareparts DepartmentUI as a constructor
         this.id = id;
         this.name = name;
         this.quantity = quantity;

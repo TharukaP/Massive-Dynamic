@@ -23,6 +23,8 @@ import javax.swing.border.Border;
 /**
 * @author Hasantha Pathirana
  */
+
+//design the button 
 public class RSButtonMetro extends JButton implements MouseListener, MouseMotionListener {
     
     private Color colorNormal = new Color(0, 139, 139);

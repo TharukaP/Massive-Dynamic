@@ -26,7 +26,8 @@ JpanelLoader jp =new JpanelLoader();
         setResizable(false);
         this.setLocationRelativeTo(this);
         this.home.setSelected(true);
-        //new CombinePanel(pnlMain, new Panels.Home_UI());
+        
+        //open the Home panel first whenever program starts running
         jp.jPanelLoader(pnlMain,new Panels.Home_UI());
         
     }
@@ -346,10 +347,11 @@ JpanelLoader jp =new JpanelLoader();
     }// </editor-fold>//GEN-END:initComponents
 
     private void empManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empManagerActionPerformed
-        // TODO add your handling code here:
-        //new CombinePanel(pnlMain, new Panels.Employee_ManagerUI());
-        jp.jPanelLoader(pnlMain,new Panels.Login_UI());
+       
+        
+        jp.jPanelLoader(pnlMain,new Panels.Login_UI());   // Open the login UI after pressing the Employee manager
         if(this.empManager.isSelected()){
+            //controls the mouse pointing area colour in Left Menu Bar
             this.empManager.setColorNormal(new Color(60,60,59));
             this.empManager.setColorHover(new Color(60,60,59));
             this.empManager.setColorPressed(new Color(0,0,0)); 
@@ -389,10 +391,11 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_empManagerActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        // TODO add your handling code here:
-        //new CombinePanel(pnlMain, new Panels.Home_UI());
-        jp.jPanelLoader(pnlMain,new Panels.Home_UI());
+ 
+        jp.jPanelLoader(pnlMain,new Panels.Home_UI());   //Load the Home panel when Click the home Button
         if(this.home.isSelected()){
+            
+            //controls the mouse pointing area colour in Left Menu Bar
             this.home.setColorNormal(new Color(60,60,59));
             this.home.setColorHover(new Color(60,60,59));
             this.home.setColorPressed(new Color(0,0,0)); 
@@ -437,6 +440,8 @@ JpanelLoader jp =new JpanelLoader();
         jp.jPanelLoader(pnlMain,new Panels.Login_UI());
         
      if(this.Mechanic.isSelected()){
+         
+         //controls the mouse pointing area colour in Left Menu Bar
             this.Mechanic.setColorNormal(new Color(60,60,59));
             this.Mechanic.setColorHover(new Color(60,60,59));
             this.Mechanic.setColorPressed(new Color(0,0,0)); 
@@ -477,10 +482,12 @@ JpanelLoader jp =new JpanelLoader();
 
     private void recepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recepActionPerformed
         // TODO add your handling code here:
-       // new CombinePanel(pnlMain, new Panels.ReceptionistUI());
-       jp.jPanelLoader(pnlMain,new Panels.Login_UI());
+       
+       jp.jPanelLoader(pnlMain,new Panels.Login_UI());  //open the login Menu
        
        if(this.recep.isSelected()){
+           
+           //controls the mouse pointing area colour in Left Menu Bar
             this.recep.setColorNormal(new Color(60,60,59));
             this.recep.setColorHover(new Color(60,60,59));
             this.recep.setColorPressed(new Color(0,0,0)); 
@@ -521,9 +528,10 @@ JpanelLoader jp =new JpanelLoader();
 
     private void accountantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountantActionPerformed
         // TODO add your handling code here:
-        //new CombinePanel(pnlMain, new Panels.Acountant_UI());
-        jp.jPanelLoader(pnlMain,new Panels.Login_UI());
+        
+        jp.jPanelLoader(pnlMain,new Panels.Login_UI()); //open the Login Panel
         if(this.accountant.isSelected()){
+            //controls the mouse pointing area colour in Left Menu Bar
             this.accountant.setColorNormal(new Color(60,60,59));
             this.accountant.setColorHover(new Color(60,60,59));
             this.accountant.setColorPressed(new Color(0,0,0)); 
@@ -563,10 +571,11 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_accountantActionPerformed
 
     private void dManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dManagerActionPerformed
-        // TODO add your handling code here:
-        jp.jPanelLoader(pnlMain,new Panels.Login_UI());
+        
+        jp.jPanelLoader(pnlMain,new Panels.Login_UI());//open the Login Panel
 
         if(this.dManager.isSelected()){
+            //controls the mouse pointing area colour in Left Menu Bar
             this.dManager.setColorNormal(new Color(60,60,59));
             this.dManager.setColorHover(new Color(60,60,59));
             this.dManager.setColorPressed(new Color(0,0,0)); 
@@ -607,10 +616,12 @@ JpanelLoader jp =new JpanelLoader();
 
     private void spManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spManagerActionPerformed
         // TODO add your handling code here:
-        //new CombinePanel(pnlMain,new Frontend.Login_UI());
-        jp.jPanelLoader(pnlMain,new Panels.Login_UI()); 
+        
+        jp.jPanelLoader(pnlMain,new Panels.Login_UI()); //load the login panel
        
       if(this.spManager.isSelected()){
+          
+           //controls the mouse pointing area colour in Left Menu Bar
             this.spManager.setColorNormal(new Color(60,60,59));
             this.spManager.setColorHover(new Color(60,60,59));
             this.spManager.setColorPressed(new Color(0,0,0)); 
@@ -651,7 +662,7 @@ JpanelLoader jp =new JpanelLoader();
 
     private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
         // TODO add your handling code here:
-        //new CombinePanel(pnlMain, new Panels.Admin_UI());
+        
         jp.jPanelLoader(pnlMain,new Panels.Login_UI());
         if(this.admin.isSelected()){
             this.admin.setColorNormal(new Color(60,60,59));
@@ -694,7 +705,8 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_adminActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       
+        //Slide the menu to left side
         int posicion = sMenu_Panel.getX();
         if(posicion > -1){
             Animacion.Animacion.mover_izquierda(0, -260, 2, 2, sMenu_Panel);
@@ -704,8 +716,8 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void homeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMousePressed
-        // TODO add your handling code here:
-        
+       
+        //control the colour changes of the area when pressing button
         this.home.setSelected(true);
         this.recep.setSelected(false);
         this.empManager.setSelected(false);
@@ -717,7 +729,7 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_homeMousePressed
 
     private void recepMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recepMousePressed
-        // TODO add your handling code here:
+        //control the colour changes of the area when pressing button
         this.home.setSelected(false);
         this.recep.setSelected(true);
         this.empManager.setSelected(false);
@@ -729,7 +741,7 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_recepMousePressed
 
     private void empManagerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empManagerMousePressed
-        // TODO add your handling code here:
+        //control the colour changes of the area when pressing button
         this.home.setSelected(false);
         this.recep.setSelected(false);
         this.empManager.setSelected(true);
@@ -741,7 +753,7 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_empManagerMousePressed
 
     private void accountantMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountantMousePressed
-        // TODO add your handling code here:
+        //control the colour changes of the area when pressing button
         this.home.setSelected(false);
         this.recep.setSelected(false);
         this.empManager.setSelected(false);
@@ -753,7 +765,7 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_accountantMousePressed
 
     private void dManagerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dManagerMousePressed
-        // TODO add your handling code here:
+        //control the colour changes of the area when pressing button
         this.home.setSelected(false);
         this.recep.setSelected(false);
         this.empManager.setSelected(false);
@@ -765,7 +777,7 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_dManagerMousePressed
 
     private void spManagerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_spManagerMousePressed
-        // TODO add your handling code here:
+        //control the colour changes of the area when pressing button
         this.home.setSelected(false);
         this.recep.setSelected(false);
         this.empManager.setSelected(false);
@@ -777,7 +789,7 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_spManagerMousePressed
 
     private void adminMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMousePressed
-        // TODO add your handling code here:
+        //control the colour changes of the area when pressing button
         this.home.setSelected(false);
         this.recep.setSelected(false);
         this.empManager.setSelected(false);
@@ -789,7 +801,7 @@ JpanelLoader jp =new JpanelLoader();
     }//GEN-LAST:event_adminMousePressed
 
     private void MechanicMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MechanicMousePressed
-        // TODO add your handling code here:
+       //control the colour changes of the area when pressing button
         this.home.setSelected(false);
         this.recep.setSelected(false);
         this.empManager.setSelected(false);
