@@ -14,7 +14,7 @@ import Panels.SparePartsDepartment_UI;
 public class SparepartsDB_restock_DELETE {
   String id;
   SparePartsDepartment_UI obj1=new SparePartsDepartment_UI();
-  
+  Sql_Connection con=new Sql_Connection();
     public SparepartsDB_restock_DELETE(String id) {
         this.id = id;
     }
@@ -23,13 +23,12 @@ public class SparepartsDB_restock_DELETE {
       try{
           int dialogResult=JOptionPane.showConfirmDialog(null,"Are you Sure ?","Warning",JOptionPane.YES_NO_OPTION);
           if(dialogResult==JOptionPane.YES_OPTION){
-          Class.forName("com.mysql.jdbc.Driver");
-          Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/automart","root","");
-          Statement stm=con.createStatement();
+          
+          Statement stm=con.mycon().createStatement();
           String sql="DELETE FROM parts WHERE id='"+id+"'";
           stm.execute(sql);
           JOptionPane.showMessageDialog(obj1,"Record Deleted Successfully!! ");
-          con.close(); 
+           
           }
       }catch(Exception ex){
       
