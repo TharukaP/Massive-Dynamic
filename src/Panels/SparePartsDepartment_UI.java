@@ -509,7 +509,6 @@ PreparedStatement insert;
         String id=txtId.getText();
         String price=txtPrice.getText();
         String status=combo_part1.getSelectedItem().toString();
-
         SparepartsDB_UPDATE update1=new SparepartsDB_UPDATE(id, price, status);
         update1.update();
         update_orders();
